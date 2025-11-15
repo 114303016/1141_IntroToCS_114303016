@@ -1,0 +1,78 @@
+body {color: white; background-color: #00AEEE; font-family: "Arial", Times New Roman}
+h1 { 
+	font-family: Times New Roman;
+	font-size: 50px;
+}
+p{
+	text-align: center;
+	font-size: 18px;
+	color: white;
+    line-height: 1.5;
+    margin:0; /* 去掉段落上下的預設間距 */
+}
+
+.navbar  {
+	display: flex;
+	background-color: #1A1A5A;
+	list-style: none ;
+	font-size: 20px;
+	gap: 20%;
+	text-align: center;
+	padding: 5px 5px;
+	position: relative;
+	top: 2em;
+	left: 0em;
+	width: 75em;
+}
+
+.navbar li {
+  position: relative;
+}
+.navbar a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover{
+	background-color: white;
+	color: blue;
+}
+
+.dropdown-content {
+  display: none;
+  background-color: #333;
+  min-width: 150px;
+  list-style: none;
+  padding:5px 10px;        /* 上下 5px, 左右 10px */
+  white-space: nowrap;     /* 文字不換行 */
+  position: absolute;      
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+div p{
+	text-align: left;
+	padding: 40px 50px 20px 25px;
+	background-color: lightgray;
+	color: black;
+	margin: 0;
+	line-height: 0.5;
+}
+
+
+
+@media all {
+   body { background-color: #00AEEE; }
+}
+
+@media print {
+  body {
+    color: black;
+    background-color: white;
+  }
+}
