@@ -1,0 +1,133 @@
+body{
+	background-color: #eeede1;
+	display: flex;
+	justify-content: center; /* 讓內容水平置中 */
+	align-content: center;   /* 讓內容垂直置中 */
+	padding: 20px;
+	margin: 0;
+	font-family: Times New Roman, Arial;
+}
+
+.main-container{
+	width: 1000px;
+	background-color: white;
+	border-radius: 10px;
+
+	display: flex;
+	box-shadow: 0 0 18px rgb(0, 0, 0, 0.15);
+}
+.left-panel{
+	width: 30%;
+	background-color: #D0F0FF;
+	box-sizing: border-box;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;   /* 上下排列 photo-panel & text-content */
+}
+.photo-panel img{
+	width: 100%;
+	border-top-left-radius: 10px;
+}
+
+.text-content{
+	padding: 20px;
+}
+.text-content ul{
+	list-style: none;   /* 移除list的點點 */
+	padding: 0;
+}
+.NCCU-logo{
+	width: 80%;
+}
+
+.right-panel{
+	width: 70%;
+	background-color: white;
+	box-sizing: border-box;   /* 讓元素的實際寬度不會被撐大 */
+	border-radius: 10px;
+	padding: 20px;
+}
+.section-title{
+	border-bottom: 2px solid black;     /* 加分隔線 */
+	margin-top: 0;
+}
+.timeline-item{
+	display: flex;    /* 讓年份跟描述在同一行 */
+	margin-bottom: 15px;     /* 讓項目下方產生空間 */
+}
+.timeline-item .year{                   /* 用 <span> 就不會換行， cf.<div> 會 */
+	width: 100px;    /* 使年份跟描述間有空格 */
+	color: darkblue;
+}
+.tag{
+	display: inline-block;       /* 讓span可以設定寬跟高 還有padding */
+	background-color: aliceblue;
+	color: #000ACF;
+	padding: 5px 10px;      /* 內邊距 */
+	border-radius: 15px;
+	margin-right: 10px;     /* 每個標籤的間距 */
+	margin-bottom: 15px;
+}
+.container{
+	display: flex;
+	gap: 20px;    /* 兩欄間距 */
+}
+
+/* 兩個欄位共用的卡片樣式 */ 
+.card {
+	flex: 1;    /* 平均佔寬度 */
+	background-color: lightgray;
+	padding: 15px;
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
+.card h3{
+	margin-top: 0;
+}
+.card li{
+	margin-bottom: 5px;
+}
+.card a{
+	text-decoration: none;
+	color: darkblue;
+	/* 前面有加的 target="_blank" 是為了在新分頁中打開連結，就可以保留原本的網頁，比較方便回來*/
+}
+.card a:hover{
+	color:orangered;
+}
+.music-row{
+	display: flex;
+	justify-content: space-between; /* 四個平均分布 */
+}
+.music-item{
+	text-align: center;
+	color: black;
+	width: 50%;
+	text-decoration: none;
+
+}
+.music-item img{
+	width: 30%;            /* 調整圖片大小 */
+	aspect-ratio: 1/1;     /* 保持正方形比例 */
+	border-radius: 50%;    /* 變成圓形 */
+	margin-bottom: 8px;
+}
+
+.song-title{
+	font-family: Times New Roman, Arial;
+	margin-top: 2px;
+	width: 100%;
+}
+.song-title a{
+	text-decoration: none;
+}
+.music-note{
+	font-family: Arial;
+	color: gray;
+	margin-top: 10px;
+}
+
+
+
+
+
