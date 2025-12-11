@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<h1>114303016_HW7_1A2B</h1> Enter 4 unique numbers
+	<input type="text" id="guessInput">
+	<!-- <input type="button" id="guessButton" value="Guess!"> -->
+	<button onclick="play()">Guess</button>
+	<div id="record"></div>
+
+	<script>
+		var answer = generateAnswer();
+		var attempts = 0;
+
+		function generateAnswer(){
+			var array = [0,1,2,3,4,5,6,7,8,9];
+			var result = [];
+
+			while (result.length < 4){
+				var index =  Math.floor(Math.random() * array.length);
+				var digit = array[index];
+				result.push(digit);
+				array.splice(index, 1);  // 移除選過的數字
+			}
+			return result.join("");  // 回傳字串格式
+		}
+
+		function play() {
+        	var inputField = document.getElementById("guessInput");
+        	var guess = inputField.value;
+
+        	if (!isValid(guess)) {
+            	alert("Invalid input! Please enter 4 unique digits.");
+            	return;
+        	}
+        	attempts++;
+
+        	var result = checkAB(guess, answer);
+
+        	// 顯示紀錄
+        	var record = document.getElementById("record");
+        	record.innerHTML += "第" + attempts + "次: " +  guess + " → " + result + "<br>";
+
+        	// 猜到答案
+        	if (result === "4A0B") {
+            	alert("Correct! Answer = " + answer + "\nAttempts: " + attempts);
+        	}
+        	// 清空輸入框
+        	inputField.value = "";
+    	}
+
+    	function isValid(str) {
+        	if (str.length !== 4) return false;
+        	for (let i = 0; i < str.length; i++) {
+    			if (str[i] < '0' || str[i] > '9') {
+        			return false;
+    			}
+			}
+
+        	var arr = str.split("");
+        	var set = new Set(arr);
+        	return set.size === 4;    // 不重複才 true
+    	}
+
+    	function checkAB(guess, ans) {
+    		var A = 0, B = 0;
+    		var g = guess.split("");      // 轉陣列
+        	var a = ans.split("");
+
+        	for (let i = 0; i < 4; i++) {
+            	if (g[i] === a[i]) {
+                	A++;
+            	} else if (a.includes(g[i])) {
+                	B++;
+            	}
+        	}
+        	return A + "A" + B + "B";
+    	}
+
+	</script>
+
+</body>
+</html>
